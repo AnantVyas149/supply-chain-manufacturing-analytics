@@ -1,53 +1,154 @@
 # DataCo Supply Chain & Manufacturing Analytics
 
-A portfolio Data Analytics project built from the **DataCo Smart Supply Chain** Kaggle dataset.
+An end-to-end Supply Chain & Manufacturing Analytics project built using the real **DataCo Smart Supply Chain dataset**. The project combines Python, MySQL, Excel, and Jupyter Notebook to analyze revenue, profitability, customers, products, markets, shipping performance, and delivery operations.
 
-## Dataset
-Source: DataCo Smart Supply Chain for Big Data Analysis (Kaggle). The original dataset contains 180,519 order-item records and 53 columns in this uploaded version.
+---
 
-## Privacy / cleaning
-The original file contains customer-identifying/security fields. These were deliberately excluded from the analytics dataset, including customer email, password, names, street address, and unnecessary product-image/description fields.
+## 📌 Project Overview
 
-## Stack
-- Python: pandas, NumPy, matplotlib
-- MySQL
-- Excel
+This project analyzes **180,519 order-item transactions** from the DataCo Smart Supply Chain dataset.
+
+The objective is to transform raw transactional data into actionable business insights across:
+
+- Revenue and profitability
+- Product and category performance
+- Customer segments
+- Market and regional performance
+- Shipping and delivery operations
+- Discounts and margins
+- Customer value
+- Monthly business trends
+- Operational bottlenecks
+
+The project follows a complete analytics workflow:
+
+**Raw Data → Data Cleaning → Feature Engineering → Exploratory Analysis → SQL Analysis → Excel Dashboard → Business Insights**
+
+---
+
+## 📊 Dataset
+
+**Dataset:** DataCo Smart Supply Chain for Big Data Analysis
+
+The dataset contains:
+
+- 180,519 order-item records
+- 53 original columns
+- Customer information
+- Product information
+- Order information
+- Shipping information
+- Sales and profit information
+- Market and geographical information
+
+The dataset is used for analytical and educational purposes.
+
+---
+
+## 🔐 Data Privacy & Cleaning
+
+The original dataset contains customer-identifying and unnecessary fields.
+
+The following fields were removed from the analytics dataset:
+
+- Customer Email
+- Customer Password
+- Customer First Name
+- Customer Last Name
+- Customer Street
+- Customer Zipcode
+- Order Zipcode
+- Product Image
+- Product Description
+
+The cleaned dataset contains only the fields required for analysis.
+
+---
+
+## 🛠️ Technology Stack
+
+### Python
+- Pandas
+- NumPy
+- Matplotlib
 - Jupyter Notebook
-- Git/GitHub
 
-## Workflow
-Raw Kaggle data → Python cleaning/feature engineering → MySQL → SQL business analysis → Excel KPI analysis → recommendations.
+### SQL
+- MySQL
+- Aggregations
+- GROUP BY
+- JOIN
+- CASE statements
+- CTEs
+- Window functions
+- Business KPI analysis
 
-## Key analyses
-- Revenue, profit and margin
-- On-time and late delivery
-- Shipping-mode performance
-- Category performance
-- Market performance
-- Product ranking
-- Customer-segment performance
-- Monthly trends and MoM growth
-- Top products within each category using window functions
+### Excel
+- KPI dashboard
+- Pivot-style analysis
+- SUMIFS
+- COUNTIFS
+- AVERAGEIF
+- IF
+- XLOOKUP
+- Charts
+- Conditional analysis
 
-## Local setup
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-python python\analysis.py
-```
+### Tools
+- VS Code
+- MySQL Workbench
+- Git
+- GitHub
 
-## MySQL
-1. Open MySQL Workbench.
-2. Run `sql/01_schema.sql`.
-3. Import `data/cleaned/dataco_supply_chain_cleaned.csv` into the `orders` table using Workbench's import wizard.
-4. Run `sql/02_business_analysis.sql`.
+---
 
-## Excel
-Open `excel/DataCo_Analytics.xlsx` for KPI, monthly, category, shipping, market and product analysis.
+## 🔄 Project Workflow
 
-## Limitations
-The dataset is transactional and does not contain every operational driver needed for causal analysis. Recommendations are therefore descriptive and should not be treated as proof of causality.
+```text
+DataCo Raw Dataset
+        ↓
+Data Cleaning
+        ↓
+Column Standardization
+        ↓
+Feature Engineering
+        ↓
+Exploratory Data Analysis
+        ↓
+MySQL Database
+        ↓
+Business SQL Analysis
+        ↓
+Excel KPI Dashboard
+        ↓
+Business Insights & Recommendations
 
-## Power BI
-Intentionally excluded from this version.
+supply-chain-manufacturing-analytics/
+│
+├── SQL/
+│   ├── 01_schema.sql
+│   ├── 02_load_guide.sql
+│   └── 03_business_analysis.sql
+│
+├── data/
+│   ├── raw/
+│   │   ├── DataCoSupplyChainDataset.csv
+│   │   └── DescriptionDataCoSupplyChain.csv
+│   │
+│   └── cleaned/
+│       └── dataco_supply_chain_cleaned.csv
+│
+├── excel/
+│   └── DataCo_CV_Ready_Excel_Analytics.xlsx
+│
+├── notebooks/
+│   └── DataCo_Complete_Analytics_Notebook.ipynb
+│
+├── python/
+│   └── analysis.py
+│
+├── reports/
+│   └── business_insights.md
+│
+├── README.md
+└── requirements.txt
